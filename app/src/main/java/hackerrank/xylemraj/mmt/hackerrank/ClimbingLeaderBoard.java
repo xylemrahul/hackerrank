@@ -16,11 +16,10 @@ public class ClimbingLeaderBoard {
         }
 
         int[] result = new int[alice.length];
-        TreeSet<Integer> aliceSet = (TreeSet<Integer>) treeSet.clone();
         for (int i = 0; i < alice.length; i++) {
-               aliceSet.add(alice[i]);
-               result[i] = Math.abs(aliceSet.headSet(alice[i]).size() - aliceSet.size());
-               aliceSet.remove(alice[i]);
+                treeSet.add(alice[i]);
+                result[i] = Math.abs(treeSet.headSet(alice[i]).size() - treeSet.size());
+                treeSet.remove(alice[i]);
         }
     }
 }
