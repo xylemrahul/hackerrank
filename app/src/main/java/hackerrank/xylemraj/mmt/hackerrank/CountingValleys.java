@@ -1,33 +1,36 @@
 package hackerrank.xylemraj.mmt.hackerrank;
 
-public class CountingValleys {
+public class CountingValleys
+{
 
     // Complete the countingValleys function below.
-    static int countingValley(int n, String s) {
+    static int countingValley( int n, String s )
+    {
 
         char[] chars = s.toCharArray();
-
-        int u = 0 , d = 0;
-        for (int i = 0; i < chars.length; i++) {
-            if(chars[i] == 'U' ){
-                u++;
-                if(d>0)
+        int valley = 0;
+        int level = 0;
+        for( int i = 0; i < chars.length; i++ )
+        {
+            if( chars[ i ] == 'U' )
+            {
+                level++;
+            }
+            else if( chars[ i ] == 'D' )
+            {
+                if( level == 0 )
                 {
-                    d--;
+                    valley++;
                 }
-            }else if(chars[i] == 'D' ){
-                if(u>0)
-                {
-                    u--;
-                }
-                d++;
+                level--;
             }
         }
-        return d;
+        return valley;
     }
 
-    public static void main(String[] args){
-        int result = countingValley(12, "DDUUDDUDUUUD");
-        System.out.println("Result is" + result);
+    public static void main( String[] args )
+    {
+        int result = countingValley( 12, "DDUUDDUDUUUD" );
+        System.out.println( "Result is" + result );
     }
 }
