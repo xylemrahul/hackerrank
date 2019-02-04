@@ -1,18 +1,14 @@
 package hackerrank.xylemraj.mmt.hackerrank;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Questions controversial , not clear.
  * */
 public class BetweenTwoSets
 {
-    //TODO : Important concept of finding HCF
-    public static void main(String[] args){
-
-        int i = getTotalX( new int[]{3,4},new int[]{ 24,48 } );
-        System.out.print( i );
-    }
 
     static int getTotalX(int[] a, int[] b) {
         Arrays.sort(a);
@@ -53,5 +49,37 @@ public class BetweenTwoSets
             result = gcd( arr[i], result );
         }
         return result;
+    }
+
+    private static final Scanner scan = new Scanner( System.in);
+
+    public static void main(String[] args) throws IOException
+    {
+
+        String[] nm = scan.nextLine().split(" ");
+
+        int n = Integer.parseInt(nm[0].trim());
+
+        int m = Integer.parseInt(nm[1].trim());
+
+        int[] a = new int[n];
+
+        String[] aItems = scan.nextLine().split(" ");
+
+        for (int aItr = 0; aItr < n; aItr++) {
+            int aItem = Integer.parseInt(aItems[aItr].trim());
+            a[aItr] = aItem;
+        }
+
+        int[] b = new int[m];
+
+        String[] bItems = scan.nextLine().split(" ");
+
+        for (int bItr = 0; bItr < m; bItr++) {
+            int bItem = Integer.parseInt(bItems[bItr].trim());
+            b[bItr] = bItem;
+        }
+
+        int total = getTotalX(a, b);
     }
 }
