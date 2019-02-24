@@ -1,12 +1,8 @@
 package hackerrank.xylemraj.mmt.hackerrank;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-
-import static java.util.Map.Entry.comparingByValue;
 
 public class BallotSystem {
 
